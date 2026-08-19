@@ -6,7 +6,7 @@
 /*   By: mbougear <mbougear@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 20:57:24 by mbougear          #+#    #+#             */
-/*   Updated: 2026/08/17 21:05:30 by mbougear         ###   ########.fr       */
+/*   Updated: 2026/08/19 13:54:20 by mbougear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-
+/*
 #include <stdio.h>
 
-/*
 int	main(void)
 {
 	int	n;
