@@ -36,20 +36,17 @@ void	ft_print_comb(void)
 			{
 				ft_put3chars(c, d, u);
 				if (c != '7')
-				{
 					write(1, ", ", 2);
-				}
-				u = u + 1;
+				u++;
 			}
-			d = d + 1;
-		}
-		c = c + 1;
+			d++;
+        }
+		c++;
 	}
 }
-/*
+
 int	main(void)
 {
 	ft_print_comb();
 	return (0);
 }
-*/

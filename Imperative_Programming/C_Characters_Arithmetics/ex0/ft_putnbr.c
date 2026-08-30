@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
@@ -29,24 +30,22 @@ void	ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		write(1, "-", 1);
-		nb = nb * -1;
+		nb *= -1;
 	}
 	r = 1;
-	while ((nb / r) > 9)
-	{
-		r = r * 10;
-	}
+	while ((nb / r) => 10)
+		r *= 10;
 	while (r > 0)
 	{
 		ft_putchar('0' + (nb / r));
-		nb = nb % r;
-		r = r / 10;
+		nb %= r;
+		r /= 10;
 	}
 }
-/*
-int	main(void)
+
+int     main(int argc, char **argv)
 {
-	ft_putnbr(42);
+    if (argc == 2)
+        ft_putnbr(atoi(*argv[1]));
 	return (0);
 }
-*/

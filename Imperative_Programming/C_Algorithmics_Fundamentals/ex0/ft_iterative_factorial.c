@@ -10,40 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_iterative_factorial(int nb)
 {
 	int	f;
 	int	i;
 
 	if (nb < 0)
-	{
 		return (0);
-	}
 	if (nb == 0)
-	{
 		return (1);
-	}
-	else
-	{
-		f = 1;
-		i = 1;
-		while (i <= nb)
-		{
-			f = f * i;
-			i = i + 1;
-		}
-		return (f);
-	}
+	f = 1;
+    i = 1;
+    while (i <= nb)
+    {
+        f *= i;
+        i++;
+    }
+    return (f);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	printf("%d\n", ft_iterative_factorial(-2));
-	printf("%d\n", ft_iterative_factorial(0));
-	printf("%d\n", ft_iterative_factorial(2));
-	printf("%d\n", ft_iterative_factorial(5));
-	return (0);
+	if (argc == 2)
+        printf("La factorielle de %d est %d.\n", atoi(argv[1]), ft_iterative_factorial(atoi(argv[1])));
+    return (0);
 }
-*/
