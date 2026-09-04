@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_fibonacci(int index)
 {
 	if (index < 0)
@@ -29,22 +32,10 @@ int	ft_fibonacci(int index)
 		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 	}
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int     main(int argc, char **argv)
 {
-	printf("%d\n", ft_fibonacci(-2));
-	printf("%d\n", ft_fibonacci(-1));
-	printf("%d\n", ft_fibonacci(0));
-	printf("%d\n", ft_fibonacci(1));
-	printf("%d\n", ft_fibonacci(2));
-	printf("%d\n", ft_fibonacci(3));
-	printf("%d\n", ft_fibonacci(4));
-	printf("%d\n", ft_fibonacci(5));
-	printf("%d\n", ft_fibonacci(6));
-	printf("%d\n", ft_fibonacci(7));
-	printf("%d\n", ft_fibonacci(8));
-	return (0);
+    if (argc == 2)
+        printf("A l'indice %s, la valeur de la suite de Fibonacci vaut %d\n", argv[1], ft_fibonacci(atoi(argv[1])));
+    return (0);
 }
-*/

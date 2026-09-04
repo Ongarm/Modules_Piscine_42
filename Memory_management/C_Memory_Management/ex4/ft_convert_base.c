@@ -116,7 +116,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	nbrf = ft_dec_to_base(dec, base_to);
 	return (nbrf);
 }
-/*
+
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -132,4 +132,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-*/

@@ -89,7 +89,7 @@ char	**ft_split(char *str, char *charset)
 	strs[m] = NULL;
 	return (strs);
 }
-/*
+
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -112,4 +112,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-*/

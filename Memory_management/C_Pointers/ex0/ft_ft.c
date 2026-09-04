@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	int	n;
-
-	n = 0;
-	ft_ft(&n);
-	printf("%d\n", n);
-	return (0);
+    int     n;
+    
+    if (argc == 2)
+    {
+        n = atoi(argv[1]);
+        printf("%d\n", n);
+        ft_ft(&n);
+        printf("%d\n", n);
+    }
+    return (0);
 }
-*/

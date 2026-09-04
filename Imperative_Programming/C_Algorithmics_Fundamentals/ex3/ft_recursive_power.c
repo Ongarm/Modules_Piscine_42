@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)
@@ -29,18 +32,10 @@ int	ft_recursive_power(int nb, int power)
 		return (nb * ft_recursive_power(nb, power -1));
 	}
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	printf("%d\n", ft_recursive_power(0, 5));
-	printf("%d\n", ft_recursive_power(0, 0));
-	printf("%d\n", ft_recursive_power(4, 3));
-	printf("%d\n", ft_recursive_power(2, 5));
-	printf("%d\n", ft_recursive_power(5, 2));
-	printf("%d\n", ft_recursive_power(5, 0));
-	printf("%d\n", ft_recursive_power(3, -1));
-	return (0);
+    if (argc == 3)
+        printf("%s puissance %s font %d\n", argv[1], argv[2], ft_recursive_power(atoi(argv[1]), atoi(argv[2])));
+    return (0);
 }
-*/

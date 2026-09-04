@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_iterative_power(int nb, int power)
 {
 	int	r;
@@ -36,18 +39,10 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (r);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	printf("%d\n", ft_iterative_power(0, 5));
-	printf("%d\n", ft_iterative_power(0, 0));
-	printf("%d\n", ft_iterative_power(4, 3));
-	printf("%d\n", ft_iterative_power(2, 5));
-	printf("%d\n", ft_iterative_power(5, 2));
-	printf("%d\n", ft_iterative_power(5, 0));
-	printf("%d\n", ft_iterative_power(3, -1));
+	if (argc == 3)
+        printf("%s puissance %s font %d\n", argv[1], argv[2], ft_iterative_power(atoi(argv[1]), atoi(argv[2])));
 	return (0);
 }
-*/
