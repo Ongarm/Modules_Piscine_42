@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
@@ -35,29 +38,30 @@ void	ft_sort_int_tab(int *tab, int size)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	int	tab[8] = {42, 1997, 29, 1, 75010, 4, 2, 17};
+	int	*tab;
 	int	i;
 
-	i = 0;
-	while (i < 8)
-	{
-		printf("%d ", tab[i]);
-		i++;
-	}
-	printf("\n");
-	ft_sort_int_tab(tab, 8);
-	i = 0;
-	while (i < 8)
-	{
-		printf("%d ", tab[i]);
-		i++;
-	}
-	printf("\n");
+    if(argc >= 3)
+    {
+        i = 0;
+        while (i < argc - 1)
+        {
+            tab[i] = atoi(argv[i + 1]);
+            i++;
+        }
+        ft_sort_int_tab(tab, argc - 1);
+        i = 0;
+        while (i < argc - 1)
+        {
+            printf("%d", tab[i]);
+            i++;
+            if (i < argc - 1)
+                printf(" ");
+        }
+        printf("\n");
+    }
 	return (0);
 }
-*/

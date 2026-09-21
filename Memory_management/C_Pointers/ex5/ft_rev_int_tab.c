@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
@@ -26,37 +29,30 @@ void	ft_rev_int_tab(int *tab, int size)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	int	tabp[6] = {1, 2, 3, 4, 5, 6};
-	int	tabi[7] = {1, 2, 3, 4, 5, 6, 7};
-	int x;
+    int	*tab;
+	int i;
 
-	for (x = 0 ; x < 6 ; x = x + 1)
-	{
-		printf("%d", tabp[x]);
-	}
-	printf("\n");
-	ft_rev_int_tab(tabp, 6);
-	for (x = 0 ; x < 6 ; x = x + 1)
-	{
-		printf("%d", tabp[x]);
-	}
-	printf("\n");
-	for (x = 0 ; x < 7 ; x = x + 1)
-	{
-		printf("%d", tabi[x]);
-	}
-	printf("\n");
-	ft_rev_int_tab(tabi, 7);
-	for (x = 0 ; x < 7 ; x = x + 1)
-	{
-		printf("%d", tabi[x]);
-	}
-	printf("\n");
-	return (0);
+	if (argc >= 3)
+    {
+        i = 0;
+        while (i < argc - 1)
+        {
+            tab[i] = atoi(argv[i + 1]);
+            i++;
+        }
+        ft_rev_int_tab(tab, argc - 1);
+        i = 0;
+        while (i < argc - 1)
+        {
+            printf("%d", tab[i]);
+            i++;
+            if (i < argc - 1)
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return (0);
 }
-*/

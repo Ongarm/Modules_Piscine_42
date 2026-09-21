@@ -22,7 +22,7 @@ void	ft_swap(int *a, int *b)
 	*b = t;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	int	x;
 	int	y;

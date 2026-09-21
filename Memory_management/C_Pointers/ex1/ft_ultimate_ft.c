@@ -18,7 +18,7 @@ void	ft_ultimate_ft(int *********nbr)
 	*********nbr = 42;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	int	a;
 	int	*b;

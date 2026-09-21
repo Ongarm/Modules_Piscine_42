@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
 	*div = a / b;
 	*mod = a % b;
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	int	q;
+    int	q;
 	int	r;
-	ft_div_mod(42, 5, &q, &r);
-	printf("Le resultat donne %d pour quotient et %d pour reste.\n", q, r);
-	return(0);
+    
+    if (argc == 3)
+    {
+        ft_div_mod(atoi(argv[1]), atoi(argv[2]), &q, &r);
+        printf("%d %d\n", q, r);
+    }
+    return(0);
 }
-*/

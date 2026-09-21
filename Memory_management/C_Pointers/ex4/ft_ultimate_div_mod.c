@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int	q;
@@ -20,18 +23,18 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*a = q;
 	*b = r;
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	int	x;
 	int	y;
 
-	x = 42;
-	y = 5;
-	ft_ultimate_div_mod(&x, &y);
-	printf("Le resultat donne %d pour quotient et %d pour reste.\n", x, y);
-	return (0);
+	if (argc == 3)
+    {
+        x = atoi(argv[1]);
+        y = atoi(argv[2]);
+        ft_ultimate_div_mod(&x, &y);
+        printf("%d %d\n", x, y);
+    }
+    return (0);
 }
-*/
