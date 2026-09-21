@@ -25,6 +25,6 @@ int	ft_recursive_factorial(int nb)
 int    main(int argc, char **argv)
 {
     if (argc == 2)
-        printf("La factorielle de %s est %d.\n", argv[1], ft_recursive_factorial(atoi(argv[1])));
+        printf("%d\n", ft_recursive_factorial(atoi(argv[1])));
     return (0);
 }

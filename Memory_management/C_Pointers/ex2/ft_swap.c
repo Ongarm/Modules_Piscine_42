@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void	ft_swap(int *a, int *b)
 {
 	int	t;
@@ -18,19 +21,19 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = t;
 }
-/*
-#include <stdio.h>
 
 int	main(void)
 {
 	int	x;
 	int	y;
 
-	x = 6;
-	y = 7;
-	printf("%d %d\n", x, y);
-	ft_swap(&x, &y);
-	printf("%d %d\n", x, y);
+	if (argc == 3)
+    {
+        x = atoi(argv[1]);
+        y = atoi(argv[2]);
+        printf("%d %d\n", x, y);
+        ft_swap(&x, &y);
+        printf("%d %d\n", x, y);
+    }
 	return (0);
 }
-*/
