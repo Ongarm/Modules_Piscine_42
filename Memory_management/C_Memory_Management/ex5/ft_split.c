@@ -11,21 +11,30 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	ft_is_sep(char c, char *sep)
 {
-	if (sep == NULL || *sep == '\0')
-		return (0);
-	if (c == *sep)
-		return (1);
-	return (ft_is_sep(c, sep + 1));
+    int i;
+    
+    i = 0;
+    while(sep[i])
+    {
+        if (c == sep[i])
+            return (1);
+        i++;
+    }
+    return (0);
 }
 
 int	ft_wordlen(char *str, char *sep)
 {
-	if (str == NULL || *str == '\0' || ft_is_sep(*str, sep))
-		return (0);
-	return (1 + ft_wordlen(str + 1, sep));
+    int i;
+    
+    i = 0;
+    while (str[i] && !ft_is_sep(str[i], sep))
+        i++;
+    return (i);
 }
 
 int	ft_word_count(char *str, char *sep)
@@ -89,8 +98,6 @@ char	**ft_split(char *str, char *charset)
 	strs[m] = NULL;
 	return (strs);
 }
-
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

@@ -32,15 +32,13 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
-/*
-int	main(void)
+
+int    main(int argc, char **argv)
 {
-	ft_putstr_non_printable("Je fais une Yellow ce soir,");
-	write(1, "\n", 1);
-	ft_putstr_non_printable("ca te dirait de...\vpas venir ?");
-	write(1, "\n", 1);
-	ft_putstr_non_printable("");
-	write(1, "\n", 1);
-	return (0);
+    if (argc == 2)
+    {
+        ft_putstr_non_printable(argv[1]);
+        write(1, "\n", 1);
+    }
+    return (0);
 }
-*/

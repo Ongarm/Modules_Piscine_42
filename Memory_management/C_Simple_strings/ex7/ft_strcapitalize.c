@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
@@ -19,45 +21,18 @@ char	*ft_strcapitalize(char *str)
 	i = 1;
 	while (str[i])
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-			&& (str[i - 1] < '0'
-				|| (str[i - 1] > '9' && str[i - 1] < 'A')
-				|| (str[i - 1] > 'Z' && str[i - 1] < 'a')
-				|| str[i - 1] > 'z'))
+		if ((str[i] >= 'a' && str[i] <= 'z') && (str[i - 1] < '0' || (str[i - 1] > '9' && str[i - 1] < 'A') || (str[i - 1] > 'Z' && str[i - 1] < 'a') || str[i - 1] > 'z'))
 			str[i] -= 32;
-		if ((str[i] >= 'A' && str[i] <= 'Z')
-			&& ((str[i - 1] >= '0' && str[i - 1] <= '9')
-				|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z')
-				|| (str[i - 1] >= 'a' && str[i - 1] <= 'z')))
+		if ((str[i] >= 'A' && str[i] <= 'Z') && ((str[i - 1] >= '0' && str[i - 1] <= '9')|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z') || (str[i - 1] >= 'a' && str[i - 1] <= 'z')))
 			str[i] += 32;
 		i++;
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	char	chaine1[] = "test";
-	char	chaine2[] = "TEST";
-	char	chaine3[] = "tEsT";
-	char	chaine4[] = "Hi\nhow are yOu? 42WoRds foRty-two; fiFty+and+oNe";
-	char	chaine5[] = "";
-	char	chaine6[] = "]s}Rb\\u00bY";
-	
-	ft_strcapitalize(chaine1);
-	ft_strcapitalize(chaine2);
-	ft_strcapitalize(chaine3);
-	ft_strcapitalize(chaine4);
-	ft_strcapitalize(chaine5);
-	ft_strcapitalize(chaine6);
-	printf("%s\n", chaine1);
-	printf("%s\n", chaine2);
-	printf("%s\n", chaine3);
-	printf("%s\n", chaine4);
-	printf("%s\n", chaine5);
-	printf("%s\n", chaine6);
-	return (0);
+    if (argc == 2)
+        printf("%s\n", ft_strcapitalize(argv[1]));
+    return (0);
 }
-*/

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_str_is_numeric(char *str)
 {
 	int	i;
@@ -17,21 +19,17 @@ int	ft_str_is_numeric(char *str)
 	i = 0;
 	while (str[i] != 0)
 	{
-		if (str[i] >= 48 && str[i] <= 57)
+		if (str[i] >= '0' && str[i] <= '9')
 			i++;
 		else
 			return (0);
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	printf("%d\n", ft_str_is_numeric("28082026"));
-	printf("%d\n", ft_str_is_numeric("28/08/2026 = exam final"));
-	printf("%d\n", ft_str_is_numeric(""));
-	return (0);
+    if (argc == 2)
+        printf("%d\n", ft_str_is_numeric(argv[1]));
+    return (0);
 }
-*/

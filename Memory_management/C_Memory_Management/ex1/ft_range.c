@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	*ft_range(int min, int max)
 {
@@ -35,8 +36,6 @@ int	*ft_range(int min, int max)
 	}
 	return (tab);
 }
-/*
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -57,4 +56,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-*/

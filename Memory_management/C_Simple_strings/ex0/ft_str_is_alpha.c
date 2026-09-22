@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_str_is_alpha(char *str)
 {
 	int	i;
@@ -17,21 +19,17 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != 0)
 	{
-		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
 			i++;
 		else
 			return (0);
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	printf("%d\n", ft_str_is_alpha("Chaine"));
-	printf("%d\n", ft_str_is_alpha("Chaine de caracteres"));
-	printf("%d\n", ft_str_is_alpha(""));
+    if (argc == 2)
+        printf("%d\n", ft_str_is_alpha(argv[1]));
 	return (0);
 }
-*/

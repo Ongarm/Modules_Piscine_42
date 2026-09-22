@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_str_is_lowercase(char *str)
 {
 	int	i;
@@ -24,16 +26,10 @@ int	ft_str_is_lowercase(char *str)
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	printf("%d\n", ft_str_is_lowercase("minuscule"));
-	printf("%d\n", ft_str_is_lowercase("MAJUSCULE"));
-	printf("%d\n", ft_str_is_lowercase("LesDeux"));
-	printf("%d\n", ft_str_is_lowercase("Les 2"));
-	printf("%d\n", ft_str_is_lowercase(""));
-	return (0);
+    if (argc == 2)
+        printf("%d\n", ft_str_is_lowercase(argv[1]));
+    return (0);
 }
-*/

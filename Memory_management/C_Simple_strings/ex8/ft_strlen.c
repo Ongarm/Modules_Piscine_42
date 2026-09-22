@@ -10,29 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-	{
 		i++;
-	}
 	return (i);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	char	ch1[] = "T";
-	char	ch2[] = "Te\nst";
-	char	ch3[] = "";
-
-	printf("%d\n", ft_strlen(ch1));
-	printf("%d\n", ft_strlen(ch2));
-	printf("%d\n", ft_strlen(ch3));
-	return (0);
+    if (argc == 2)
+        printf("%d\n", ft_strlen(argv[1]));
+    return (0);
 }
-*/

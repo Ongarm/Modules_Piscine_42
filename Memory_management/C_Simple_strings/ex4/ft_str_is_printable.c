@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_str_is_printable(char *str)
 {
 	int	i;
@@ -24,20 +26,10 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
-{	
-	printf("%d\n", ft_str_is_printable("tabulation"));
-	printf("%d\n", ft_str_is_printable("	tabulation	"));
-	printf("%d\n", ft_str_is_printable("espace"));
-	printf("%d\n", ft_str_is_printable(" espace "));
-	printf("%d\n", ft_str_is_printable("/barre oblique/"));
-	printf("%d\n", ft_str_is_printable("nouvelle ligne"));
-	printf("%d\n", ft_str_is_printable("\nnouvelle ligne\n"));
-	printf("%d\n", ft_str_is_printable("\\barre oblique inverse\\"));
-	printf("%d\n", ft_str_is_printable(""));
-	return (0);
+int    main(int argc, char **argv)
+{
+    if (argc == 2)
+        printf("%d\n", ft_str_is_printable(argv[1]));
+    return (0);
 }
-*/

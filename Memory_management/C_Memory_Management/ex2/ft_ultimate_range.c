@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
@@ -39,8 +40,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	return (t);
 }
-/*
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -54,17 +53,14 @@ int	main(int argc, char **argv)
 		test = NULL;
 		b = atoi(argv[1]);
 		h = atoi(argv[2]);
-		printf("Distance = %d", ft_ultimate_range(&test, b, h));
-		printf("\n");
+		printf("Envergure = %d\n", ft_ultimate_range(&test, b, h));
 		j = 0;
 		while (j < (h - b))
 		{
-			printf("%d", test[j]);
-			printf("\n");
+			printf("%d\n", test[j]);
 			j++;
 		}
 		free(test);
 	}
 	return (0);
 }
-*/

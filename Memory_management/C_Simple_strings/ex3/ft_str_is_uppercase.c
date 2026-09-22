@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_str_is_uppercase(char *str)
 {
 	int	i;
@@ -17,23 +19,17 @@ int	ft_str_is_uppercase(char *str)
 	i = 0;
 	while (str[i] != 0)
 	{
-		if (str[i] >= 65 && str[i] <= 90)
+		if (str[i] >= 'A' && str[i] <= 'Z')
 			i++;
 		else
 			return (0);
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int    main(int argc, char **argv)
 {
-	printf("%d\n", ft_str_is_uppercase("minuscule"));
-	printf("%d\n", ft_str_is_uppercase("MAJUSCULE"));
-	printf("%d\n", ft_str_is_uppercase("LesDeux"));
-	printf("%d\n", ft_str_is_uppercase("Les 2"));
-	printf("%d\n", ft_str_is_uppercase(""));
-	return (0);
+    if (argc == 2)
+        printf("%d\n", ft_str_is_uppercase(argv[1]));
+    return (0);
 }
-*/

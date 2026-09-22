@@ -11,12 +11,92 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str);
-int	ft_checkbase(char *base);
-int	ft_nbr_belongs_to_base(char *nbr, char *base);
-int	ft_checknbr(char *nbr, char *base);
-int	ft_is_negative(char *nbr);
+int    ft_strlen(char *str)
+{
+    int    i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
+}
+
+int    ft_checkbase(char *base)
+{
+    int    i;
+    int    j;
+
+    if (ft_strlen(base) < 2)
+        return (0);
+    i = 0;
+    while (base[i])
+    {
+        if (base[i] == '+' || base[i] == '-' || base[i] == ' ' || (base[i] >= '\t' && base[i] <= '\r'))
+            return (0);
+        j = i + 1;
+        while (base[j])
+        {
+            if (base[i] == base[j])
+                return (0);
+            j++;
+        }
+        i++;
+    }
+    return (1);
+}
+
+int    ft_nbr_belongs_to_base(char *nbr, char *base)
+{
+    int    i;
+    int    j;
+    int    v;
+
+    i = 0;
+    if (*nbr == '-')
+        i++;
+    while (nbr[i])
+    {
+        j = 0;
+        v = 0;
+        while (base[j])
+        {
+            if (nbr[i] == base[j])
+                v++;
+            j++;
+        }
+        if (v != 1)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+int    ft_checknbr(char *nbr, char *base)
+{
+    int    i;
+
+    i = 0;
+    while (nbr[i])
+    {
+        if (nbr[i] == ' ' || nbr[i] == '+' || (nbr[i] == '-' && i != 0) || (nbr[i] >= '\t' && nbr[i] <= '\r'))
+            return (0);
+        i++;
+    }
+    if (!ft_nbr_belongs_to_base(nbr, base))
+        return (0);
+    return (1);
+}
+
+int    ft_is_negative(char *nbr)
+{
+    if (*nbr == '-')
+        return (1);
+    else
+        return (0);
+}
+
 
 int	ft_value(char c, char *base)
 {
@@ -81,17 +161,19 @@ char	*ft_dec_to_base(int dec, char *base)
 	if (dec < 0)
 		size++;
 	nbrf = malloc(sizeof(char) * (size + 1));
+	if (nbrf == NULL)
+		return (NULL);
+	nbrf[size] = '\0';
 	if (dec == 0)
 	{
-		nbrf[0] = '0';
+		*nbrf = *base;
 		return (nbrf);
 	}
 	if (dec < 0)
 	{
-		nbrf[0] = '-';
+		*nbrf = '-';
 		dec *= -1;
 	}
-	nbrf[size] = '\0';
 	while (dec > 0)
 	{
 		nbrf[size - 1] = base[dec % ft_strlen(base)];
@@ -116,8 +198,6 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	nbrf = ft_dec_to_base(dec, base_to);
 	return (nbrf);
 }
-
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

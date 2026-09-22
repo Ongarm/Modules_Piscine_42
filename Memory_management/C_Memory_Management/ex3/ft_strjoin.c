@@ -11,19 +11,31 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+int    ft_strlen(char *str)
 {
-	if (str == NULL || *str == '\0')
-		return (0);
-	return (1 + ft_strlen(str + 1));
+    int    i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
 }
 
 int	ft_char_count(char **strs)
 {
-	if (strs == NULL || *strs == NULL)
-		return (0);
-	return (ft_strlen(*strs) + ft_char_count(strs + 1));
+    int i;
+    int c;
+    
+    i = 0;
+    c = 0;
+    while (strs[i])
+    {
+        c += ft_strlen(strs[i]);
+        i++;
+    }
+    return (c);
 }
 
 char	*ft_add_str(char *base, char *add)
@@ -70,8 +82,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (strf);
 }
-/*
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -79,11 +89,10 @@ int	main(int argc, char **argv)
 
 	if (argc > 2)
 	{
-		test = ft_strjoin(2, argv + 2, argv[1]);
+		test = ft_strjoin(argc - 2, argv + 2, argv[1]);
 		printf("%s", test);
 		printf("\n");
 		free(test);
 	}
 	return (0);
 }
-*/

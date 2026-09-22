@@ -18,22 +18,16 @@ void	ft_putstr(char *str)
 
 	i = 0;
 	while (str[i])
-	{
-		write(1, &str[i], 1);
 		i++;
-	}
+    write(1, str, i);
 }
-/*
-int	main(void)
+
+int    main(int argc, char **argv)
 {
-	ft_putstr("Test.");
-	ft_putstr("\n");
-	ft_putstr("Te\nst.");
-	ft_putstr("\n");
-	ft_putstr("T");
-	ft_putstr("\n");
-	ft_putstr("");
-	ft_putstr("\n");
-	return (0);
+    if (argc == 2)
+    {
+        ft_putstr(argv[1]);
+        ft_putstr("\n");
+    }
+    return (0);
 }
-*/

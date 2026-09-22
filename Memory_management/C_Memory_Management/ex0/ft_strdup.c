@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	ft_strlen(char	*str)
 {
@@ -38,8 +39,6 @@ char	*ft_strdup(char *src)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -56,4 +55,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-*/
